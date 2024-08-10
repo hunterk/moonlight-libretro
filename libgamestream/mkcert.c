@@ -41,7 +41,9 @@ CERT_KEY_PAIR mkcert_generate() {
     EVP_PKEY *pkey = NULL;
     PKCS12 *p12 = NULL;
 
+#ifdef CRYPTO_MEM_CHECK_ON
     CRYPTO_mem_ctrl(CRYPTO_MEM_CHECK_ON);
+#endif
     bio_err = BIO_new_fp(stderr, BIO_NOCLOSE);
 
     OpenSSL_add_all_algorithms();
