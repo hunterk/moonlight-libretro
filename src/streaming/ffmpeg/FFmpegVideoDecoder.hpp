@@ -31,7 +31,7 @@ private:
     IFFmpegHardwareVideoDecoder* m_hardware_video_decoder = nullptr;
     
     AVPacket m_packet;
-    AVCodec* m_decoder = nullptr;
+    const AVCodec* m_decoder = nullptr;
     AVCodecContext* m_decoder_context = nullptr;
     AVFrame** m_frames = nullptr;
     
